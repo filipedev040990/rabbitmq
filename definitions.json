@@ -34,13 +34,7 @@
             "auto_delete": false
         },
         {
-            "name": "notify_unconfirmed_payment",
-            "vhost": "/",
-            "durable": true,
-            "auto_delete": false
-        },
-        {
-            "name": "notify_portal_access_data",
+            "name": "notifications",
             "vhost": "/",
             "durable": true,
             "auto_delete": false
@@ -79,15 +73,8 @@
             "source": "payments",
             "vhost": "/",
             "destination_type": "queue",
-            "destination": "notify_unconfirmed_payment",
-            "routing_key": "notify_unconfirmed_payment"
-        },
-        {
-            "source": "payments",
-            "vhost": "/",
-            "destination_type": "queue",
-            "destination": "notify_portal_access_data",
-            "routing_key": "notify_portal_access_data"
+            "destination": "notifications",
+            "routing_key": "notifications"
         }
     ],
     "users": [
